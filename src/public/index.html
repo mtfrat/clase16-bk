@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2 style="text-align: center;">Ingrese nuevo producto:</h2>
+    <div style="display: flex;justify-content: center;">
+        <form id="form" style="display:flex;flex-direction:column; width:300px;">
+            <input style="margin: 10px" id="title" placeholder="Titulo">
+            <input style="margin: 10px" id="price" placeholder="Precio">
+            <input style="margin: 10px" id="thumbnail" placeholder="Imagen">
+        </form>
+    </div>
+    <div id="loggedProducts" style="text-align: center;">
+    </div>
+
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="index.js"></script>
+</body>
+</html>

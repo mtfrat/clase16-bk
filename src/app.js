@@ -1,0 +1,20 @@
+const express = require('express')
+const {Server} = require('socket.io')
+
+const app = express()
+const PORT = process.env.PORT||8080
+const server = app.listen(PORT,()=>console.log(`Listening on PORT ${PORT}`))
+const io = new Server(server)
+
+let products = []
+let log =[]
+app.use(express.static(__dirname+'/public'))
+
+io.on('connection',(socket)=>{
+    socket.broadcast.emit('newUser')
+
+    socket.on('message', data =>{
+        products.push(data)
+        io.emit('products',products)
+    })
+})
